@@ -362,6 +362,6 @@ fn main() {
     let numbers = [1, 2, 3, -5];
     // process_numbers(&numbers);
     println!("--------------");
-    let chunk = split_string("Hello, World".to_string(), ',', 0);
+    let chunk = split_string("Hello, World, Rahul".to_string(), ',', 2);
     println!("The chunk is: {}", chunk);
 }
