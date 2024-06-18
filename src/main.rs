@@ -295,6 +295,36 @@ fn hash_map_demo() {
     }
 }
 
+// functions in Rust
+
+// a unit function that doesn't return anything
+fn print_sum(numbers: &[i32]) {
+    let sum: i32 = numbers.iter().sum(); // Calculate the sum of elements in slice
+    if sum % 2 == 0 {
+        // Check if sum is even
+        println!("The sum is even.");
+    } else {
+        println!("The sum is odd.");
+    }
+}
+
+// Using panic macro
+fn process_numbers(slice: &[i32]) {
+    for (index, number) in slice.iter().enumerate() {
+        if *number < 0 {
+            panic!("Negative number found at index {}", index); // Stop execution and show error message
+        }
+    }
+}
+
+// functions with return types
+fn split_string(s: String, delimiter: char, index: usize) -> String {
+    let parts: Vec<&str> = s.split(delimiter).collect();
+    let result = parts.get(index);
+
+    result.expect("Something went wrong!").to_string()
+}
+
 fn main() {
     print_demo();
     println!("--------------");
@@ -326,4 +356,12 @@ fn main() {
     println!("--------------");
     hash_map_demo();
     println!("--------------");
+    let numbers = [1, 2, 3];
+    print_sum(&numbers);
+    println!("--------------");
+    let numbers = [1, 2, 3, -5];
+    // process_numbers(&numbers);
+    println!("--------------");
+    let chunk = split_string("Hello, World".to_string(), ',', 0);
+    println!("The chunk is: {}", chunk);
 }
