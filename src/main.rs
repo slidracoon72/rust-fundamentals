@@ -1,8 +1,12 @@
+mod borrowing;
+mod error_handling;
+
 use std::{collections::HashMap, io, os::fd::AsRawFd};
 
 fn print_demo() {
     println!("Hello, world!");
     println!("I am Rahul Trivedi!");
+    println!("Rust is a systems programming language focused on safety and performance");
 }
 
 fn shadowing() {
@@ -317,6 +321,15 @@ fn process_numbers(slice: &[i32]) {
     }
 }
 
+fn loop_and_panic(numbers: Vec<i32>) {
+    for number in numbers {
+        if number < 0 {
+            panic!("Negative number found: {}", number);
+        }
+        println!("Number: {}", number);
+    }
+}
+
 // functions with return types
 fn split_string(s: String, delimiter: char, index: usize) -> String {
     let parts: Vec<&str> = s.split(delimiter).collect();
@@ -364,4 +377,10 @@ fn main() {
     println!("--------------");
     let chunk = split_string("Hello, World, Rahul".to_string(), ',', 2);
     println!("The chunk is: {}", chunk);
+    println!("--------------");
+    borrowing::borrow();
+    println!("--------------");
+    // loop_and_panic(vec![1, 2, 3, 4, -5]);
+    println!("--------------");
+    error_handling::handle_error();
 }
