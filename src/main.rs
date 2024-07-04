@@ -1,5 +1,6 @@
 mod borrowing;
 mod error_handling;
+mod structs;
 
 use std::{collections::HashMap, io, os::fd::AsRawFd};
 
@@ -338,6 +339,15 @@ fn split_string(s: String, delimiter: char, index: usize) -> String {
     result.expect("Something went wrong!").to_string()
 }
 
+// Option as a type
+fn option(){
+        let age: Option<u8> = Some(25);
+        match age {
+            Some(x) => println!("Age is {}", x),
+            None => println!("No age provided"),
+        }
+}
+
 fn main() {
     print_demo();
     println!("--------------");
@@ -378,9 +388,15 @@ fn main() {
     let chunk = split_string("Hello, World, Rahul".to_string(), ',', 2);
     println!("The chunk is: {}", chunk);
     println!("--------------");
+    option();
+    println!("--------------");
+    structs::use_struct();
+    println!("--------------");
     borrowing::borrow();
     println!("--------------");
     // loop_and_panic(vec![1, 2, 3, 4, -5]);
     println!("--------------");
     error_handling::handle_error();
+    println!("--------------");
+    
 }
