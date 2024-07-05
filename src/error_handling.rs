@@ -46,3 +46,21 @@ pub fn handle_error() {
         }
     }
 }
+
+// Using panic macro
+pub fn process_numbers(slice: &[i32]) {
+    for (index, number) in slice.iter().enumerate() {
+        if *number < 0 {
+            panic!("Negative number found at index {}", index); // Stop execution and show error message
+        }
+    }
+}
+
+pub fn loop_and_panic(numbers: Vec<i32>) {
+    for number in numbers {
+        if number < 0 {
+            panic!("Negative number found: {}", number);
+        }
+        println!("Number: {}", number);
+    }
+}
