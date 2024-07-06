@@ -36,6 +36,8 @@ fn main() {
     println!("--------------");
     arrays::vectors_demo();
     println!("--------------");
+    arrays::vectors();
+    println!("--------------");
     arrays::hash_map_demo();
     println!("--------------");
     let numbers = [1, 2, 3];

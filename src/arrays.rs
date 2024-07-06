@@ -27,6 +27,47 @@ pub fn arrays_demo() {
     }
 }
 
+pub fn vectors() {
+    let vec = vec![1, 2, 3, 4, 5];
+
+    // Retrieve a value at a specific index
+    let index = 2;
+    let value = vec.get(index).unwrap();
+    println!("The value at index {} is {:?}", index, value);
+
+    // Retrieve the last value
+    let last_value = vec.last().unwrap();
+    println!("The last value in the vector is: {}", last_value);
+
+    // Retrieve the first value using pattern matching
+    match vec.first() {
+        Some(first_value) => println!("The first value in the vector is: {}", first_value),
+        None => println!("The vector is empty!"),
+    }
+
+    let mut v = vec![1, 2, 3, 4, 5];
+    v.push(6);
+
+    // Extend vectors
+    let more_numbers = vec![7, 8];
+    v.extend(more_numbers);
+    println!("The extended vector is: {:?}", v);
+
+    // Append Vectors - required vector to be mutable
+    let mut other_numbers = vec![9, 10];
+    v.append(&mut other_numbers);
+    println!("The appended vector is:{:?}", v);
+
+    // Insert at a specific index
+    // At the beginning
+    v.insert(0, 0);
+    println!("The inserted vector is:{:?}", v);
+
+    // At the end
+    v.insert(v.len(), 99);
+    println!("The inserted vector is:{:?}", v);
+}
+
 // create a function that uses vectors
 pub fn vectors_demo() {
     // create a vector of integers
