@@ -1,7 +1,9 @@
 mod arrays;
 mod borrowing;
 mod conditionals;
+mod enums;
 mod error_handling;
+mod file_formatter;
 mod general;
 mod loops;
 mod strings;
@@ -9,6 +11,8 @@ mod structs;
 
 fn main() {
     general::print_demo();
+    println!("--------------");
+    file_formatter::file_formatter();
     println!("--------------");
     let input = "Reverse this string!";
     let reversed = general::reverse_string(input.to_string());
@@ -60,6 +64,8 @@ fn main() {
     strings::longest();
     println!("--------------");
     structs::use_struct();
+    println!("--------------");
+    enums::use_enum();
     println!("--------------");
     borrowing::borrow();
     println!("--------------");
