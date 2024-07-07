@@ -1,0 +1,1 @@
+searchState.loadedDescShard("libraries", 0, "This is a library that provides utilities for command-line …\nThis function reads a line from standard input and returns …")

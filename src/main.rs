@@ -8,11 +8,14 @@ mod general;
 mod loops;
 mod strings;
 mod structs;
+mod debugger;
 
 fn main() {
     general::print_demo();
     println!("--------------");
     file_formatter::file_formatter();
+    println!("--------------");
+    // debugger::greetings();
     println!("--------------");
     let input = "Reverse this string!";
     let reversed = general::reverse_string(input.to_string());
